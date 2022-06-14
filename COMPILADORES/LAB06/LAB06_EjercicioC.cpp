@@ -84,8 +84,37 @@ double evalPosFija(string cad)
         }
         result = 0.0;
     }
-    return 0.1;
 }
+
+/* GRAMÁTICA
+I : Inicio
+B : Bloque
+Fn : Fin
+PI : Parentesis Izquierdo
+PD : Parentesis Derecho
+p : Punto y coma
+e : suma y resta
+t : multiplicacion y division
+Prog  --> I B Fn
+B --> E p b
+b --> B
+b -->
+E --> T e
+e --> + T {print +} e
+e --> - T {print -} e
+e -->
+T --> F t
+t --> * F {print *} t
+t --> / F {print /} t
+t -->
+F --> PI E PD
+F -->  {print num} numero
+p --> {print ;} ;
+PI --> {print (} (
+PD --> {print )} )
+I --> {print Inicio} inicio
+Fn --> {print Fin}  fin
+*/
 
 FILE *f;
 char lexema[80];
@@ -130,7 +159,7 @@ void B()
         p();
         b();
     }
-    else
+    else // cadena vacia
         ;
 }
 
@@ -174,7 +203,7 @@ void e()
         evalPosFija("-");
         e();
     }
-    else
+    else // cadena vacia
         ;
 }
 
@@ -202,7 +231,7 @@ void t()
         evalPosFija("/");
         t();
     }
-    else
+    else // cadena vacia
         ;
 }
 string c;
@@ -348,7 +377,6 @@ int scanner()
         ungetc(c, f);
         return NUM;
     }
-    return 1;
 }
 
 int main()
