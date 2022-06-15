@@ -20,18 +20,7 @@ def evaluarNext(funcion_copia,x_next, Yi, Y_0): #EVALUAR LA FUNCION EN (Xi+1, Yi
         try: return (eval(funcion_copia))
         except: print("Error al ingresar datos")
 
-
-
-
-
-
-
-
-
-
-
-
-
+# Euler mejorado 
 print("EULER MEJORADO PARA ECUACIONES DIFERENCIALES")
 import math
 import matplotlib.pyplot as plt
