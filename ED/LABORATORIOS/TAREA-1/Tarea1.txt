@@ -1,0 +1,3 @@
+Se nos dejo averiguar una ecuacion diferencial que formase la grafica presentada en clase, esta es esa funcion:
+
+# y'' + 4y - cos(3x) = 0, y(x0) = y(0) = 1, y'(x0) = y'(0) = 2
